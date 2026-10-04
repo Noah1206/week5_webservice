@@ -8,8 +8,8 @@ import java.util.*;
 @Repository
 public class MemoryProductRepository implements ProductRepository {
     private final Map<Long, Product> list = new LinkedHashMap<>();
-
     private long sequence = 0L;
+
     @Override
     public Product save(Product p) {
         p.setId(++sequence);
@@ -41,7 +41,9 @@ public class MemoryProductRepository implements ProductRepository {
 
     @Override
     public void delete(Long id) {
-        sequence = sequence-1;
+        if (list.isEmpty()) {
+            sequence = 0L;
+        }
         list.remove(id);
     }
 

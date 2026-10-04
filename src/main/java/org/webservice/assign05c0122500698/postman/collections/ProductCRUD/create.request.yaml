@@ -5,10 +5,10 @@ body:
   type: json
   content: |-
     {
-        "name": "맥북pro",
-        "description": "무겁지만 성능이 좋은 노트북입니다",
+        "name": "m6맥북프로",
+        "description": "애플사 최고성능 맥북",
         "category": "노트북",
-        "date": "2024",
-        "price": "2000000"
+        "date": "2026",
+        "price": "30000000"
     }
 order: 1791111829607
