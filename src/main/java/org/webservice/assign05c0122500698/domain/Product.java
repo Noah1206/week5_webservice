@@ -5,10 +5,10 @@ public class Product {
     private String name;
     private String description;
     private String category;
-    private String date;
+    private int date;
     private int price;
     public Product () {};
-    public Product(Long id, String name, String description, String category, String date, int price) {
+    public Product(Long id, String name, String description, String category, int date, int price) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -49,11 +49,11 @@ public class Product {
         this.category = category;
     }
 
-    public String getDate() {
+    public int getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(int date) {
         this.date = date;
     }
 
