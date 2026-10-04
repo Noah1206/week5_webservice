@@ -43,4 +43,15 @@ public class MemoryProductRepository implements ProductRepository{
     public void delete(Long id) {
         list.remove(id);
     }
+
+    public List<Product> findCategory(String keyword) {
+        List<Product> plist = new ArrayList<>(list.values());
+        List<Product> keywordList = new ArrayList<>();
+        for(int i = 0; i < plist.size(); i++) {
+            if(keyword.equals(plist.get(i).getCategory())){
+                keywordList.add(plist.get(i));
+            };
+        }
+        return keywordList;
+    }
 }

@@ -72,6 +72,6 @@ public class ProductService {
     }
 
     public List<ProductResponse> findCategory(String category) {
-
+        return pr.findCategory(category).stream().map(this::toResponse).toList();
     }
 }
