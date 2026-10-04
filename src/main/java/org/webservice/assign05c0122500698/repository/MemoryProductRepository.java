@@ -8,6 +8,7 @@ import java.util.*;
 @Repository
 public class MemoryProductRepository implements ProductRepository{
     Map<Long, Product> list = new LinkedHashMap<>();
+
     long sequence = 0;
     @Override
     public Product save(Product p) {
@@ -24,8 +25,8 @@ public class MemoryProductRepository implements ProductRepository{
 
     @Override
     public List<Product> findAll() {
-
-        return List.of();
+        List<Product> plist = new ArrayList<>(list.values());
+        return plist;
     }
 
     @Override
