@@ -40,6 +40,7 @@ public class ProductService {
     }
 
     public void delete(long id) {
+        findProduct(id);
         pr.delete(id);
     }
 }
