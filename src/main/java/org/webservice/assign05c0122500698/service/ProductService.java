@@ -54,7 +54,8 @@ public class ProductService {
 
     public Product checkRequest(ProductRequest request) {
         boolean isVaild = true;
-        if(request.name().isEmpty()) {
+
+        if(request.name().isEmpty() || request.description().isEmpty() || request.category().isEmpty()) {
             isVaild=false;
         }
         if(request.price() < 0) {
