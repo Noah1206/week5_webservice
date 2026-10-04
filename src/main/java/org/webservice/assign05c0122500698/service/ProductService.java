@@ -34,4 +34,8 @@ public class ProductService {
     public List<ProductResponse> findAll() {
         return pr.findAll().stream().map(this::toResponse).toList();
     }
+
+    public ProductResponse update(long id, ProductRequest request) {
+        return toResponse(pr.update(id, new Product(null, request.name(), request.description(), request.category(), request.date(), request.price())));
+    }
 }

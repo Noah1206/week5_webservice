@@ -36,5 +36,9 @@ public class ProductController {
         return ps.findAll();
     }
 
-
+    // Update
+    @PutMapping("/{id}")
+    public ProductResponse update(@PathVariable long id, @RequestBody ProductRequest request) {
+        return ps.update(id, request);
+    }
 }

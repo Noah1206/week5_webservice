@@ -30,8 +30,13 @@ public class MemoryProductRepository implements ProductRepository{
     }
 
     @Override
-    public Product update(Long id) {
-        return null;
+    public Product update(Long id, Product p) {
+        list.get(id).setName(p.getName());
+        list.get(id).setDescription(p.getDescription());
+        list.get(id).setCategory(p.getCategory());
+        list.get(id).setDate(p.getDate());
+        list.get(id).setPrice(p.getPrice());
+        return p;
     }
 
     @Override
