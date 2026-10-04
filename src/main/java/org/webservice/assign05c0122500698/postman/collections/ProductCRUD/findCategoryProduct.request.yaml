@@ -1,4 +1,4 @@
 $kind: http-request
-url: ""
+url: https://week5-webservice.onrender.com/api/products/category/노트북
 method: GET
 order: 4472138222356423

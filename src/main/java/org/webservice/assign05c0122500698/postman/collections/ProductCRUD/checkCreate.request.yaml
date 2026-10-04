@@ -1,4 +1,14 @@
 $kind: http-request
-url: http://localhost:8088/api/products
+url: https://week5-webservice.onrender.com/api/products
 method: POST
+body:
+  type: json
+  content: |-
+    {
+        "name": "아이폰프로",
+        "description": "애플사의 최신형 아이폰",
+        "category": "아이폰",
+        "date": "2022",
+        "price": "100000"
+    }
 order: 4435977247390042

@@ -1,4 +1,4 @@
 $kind: http-request
-url: http://localhost:8088/api/products/1
+url: https://week5-webservice.onrender.com/api/products/1
 method: GET
 order: 3689040294622103

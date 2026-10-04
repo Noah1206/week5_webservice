@@ -1,5 +1,5 @@
 $kind: http-request
-url: http://localhost:8088/api/products
+url: https://week5-webservice.onrender.com/api/products
 method: POST
 body:
   type: json
