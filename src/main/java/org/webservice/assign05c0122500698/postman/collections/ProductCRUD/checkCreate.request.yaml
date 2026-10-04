@@ -1,0 +1,4 @@
+$kind: http-request
+url: http://localhost:8088/api/products
+method: POST
+order: 4435977247390042

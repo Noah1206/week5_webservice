@@ -6,10 +6,10 @@ import org.webservice.assign05c0122500698.domain.Product;
 import java.util.*;
 
 @Repository
-public class MemoryProductRepository implements ProductRepository{
-    Map<Long, Product> list = new LinkedHashMap<>();
+public class MemoryProductRepository implements ProductRepository {
+    private final Map<Long, Product> list = new LinkedHashMap<>();
 
-    long sequence = 0;
+    private long sequence = 0L;
     @Override
     public Product save(Product p) {
         p.setId(++sequence);

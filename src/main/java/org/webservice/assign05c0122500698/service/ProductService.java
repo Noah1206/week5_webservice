@@ -16,19 +16,19 @@ import java.util.List;
 public class ProductService {
     MemoryProductRepository pr = new MemoryProductRepository();
 
-    public Product create(ProductRequest request) {
-        return pr.save(checkRequest(request));
+    public ProductResponse create(ProductRequest request) {
+        return toResponse(pr.save(checkRequest(request)));
     }
 
     private ProductResponse toResponse(Product p) {
         return new ProductResponse(p.getId(), p.getName(), p.getDescription(), p.getCategory(), p.getDate(), p.getPrice());
     }
 
-    public ProductResponse findById(long id) {
+    public ProductResponse findById(Long id) {
         return toResponse(findProduct(id));
     }
 
-    public Product findProduct(long id) {
+    public Product findProduct(Long id) {
         return pr.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Product is not found " + id));
     }
 
@@ -36,7 +36,7 @@ public class ProductService {
         return pr.findAll().stream().map(this::toResponse).toList();
     }
 
-    public ProductResponse update(long id, ProductRequest request) {
+    public ProductResponse update(Long id, ProductRequest request) {
         findProduct(id);
         return toResponse(pr.update(id, checkRequest(request)));
     }
@@ -73,5 +73,9 @@ public class ProductService {
 
     public List<ProductResponse> findCategory(String category) {
         return pr.findCategory(category).stream().map(this::toResponse).toList();
+    }
+
+    public ProductResponse checkCreate(ProductRequest request) {
+        return toResponse(pr.save(checkRequest(request)));
     }
 }

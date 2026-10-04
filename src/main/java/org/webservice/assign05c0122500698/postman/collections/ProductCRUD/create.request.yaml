@@ -1,0 +1,14 @@
+$kind: http-request
+url: http://localhost:8088/api/products
+method: POST
+body:
+  type: json
+  content: |-
+    {
+        "name": "맥북pro",
+        "description": "무겁지만 성능이 좋은 노트북입니다",
+        "category": "노트북",
+        "date": "2024",
+        "price": "2000000"
+    }
+order: 1791111829607

@@ -21,7 +21,7 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<Product> create(@RequestBody ProductRequest request) {
+    public ResponseEntity<ProductResponse> create(@RequestBody ProductRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(ps.create(request));
     }
 
@@ -31,10 +31,16 @@ public class ProductController {
         return ps.findById(id);
     }
 
-    @GetMapping("/{category}")
+    @GetMapping("/category/{category}")
     public List<ProductResponse> findCategoryProduct(@PathVariable String category) {
         return ps.findCategory(category);
     }
+
+    @PostMapping("/{check}")
+    public ResponseEntity<ProductResponse> checkCreate(@RequestBody ProductRequest request) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(ps.checkCreate(request));
+    }
+
     @GetMapping
     public List<ProductResponse> findAll() {
         return ps.findAll();
