@@ -1,14 +1,15 @@
 package org.webservice.assign05c0122500698.controller;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.webservice.assign05c0122500698.domain.Product;
 import org.webservice.assign05c0122500698.dto.ProductRequest;
+import org.webservice.assign05c0122500698.dto.ProductResponse;
 import org.webservice.assign05c0122500698.service.ProductService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/products")
@@ -19,13 +20,19 @@ public class ProductController {
         this.ps = ps;
     }
 
-    @GetMapping
+    @PostMapping
     public ResponseEntity<Product> create(@RequestBody ProductRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(ps.create(request));
     }
 
     // Read findById, findAll
+    @GetMapping("/{id}")
+    public ProductResponse findById(@PathVariable long id) {
+        return ps.findById(id);
+    }
 
-
-    // 
+    @GetMapping
+    public List<ProductResponse> findAll() {
+        return ps.findAll();
+    }
 }

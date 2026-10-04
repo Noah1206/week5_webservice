@@ -3,10 +3,7 @@ package org.webservice.assign05c0122500698.repository;
 import org.springframework.stereotype.Repository;
 import org.webservice.assign05c0122500698.domain.Product;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Repository
 public class MemoryProductRepository implements ProductRepository{
@@ -20,12 +17,14 @@ public class MemoryProductRepository implements ProductRepository{
     }
 
     @Override
-    public Product findById(Long id) {
-        return null;
+    public Optional<Product> findById(Long id) {
+        return Optional.ofNullable(list.get(id));
     }
+
 
     @Override
     public List<Product> findAll() {
+
         return List.of();
     }
 
