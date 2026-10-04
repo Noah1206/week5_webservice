@@ -70,4 +70,8 @@ public class ProductService {
         }
         return new Product(null, request.name(), request.description(), request.category(), request.date(), request.price());
     }
+
+    public List<ProductResponse> findCategory(String category) {
+
+    }
 }

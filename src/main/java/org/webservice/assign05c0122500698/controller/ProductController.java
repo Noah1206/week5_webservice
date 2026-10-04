@@ -31,6 +31,10 @@ public class ProductController {
         return ps.findById(id);
     }
 
+    @GetMapping("/{category}")
+    public List<ProductResponse> findCategoryProduct(@PathVariable String category) {
+        return ps.findCategory(category);
+    }
     @GetMapping
     public List<ProductResponse> findAll() {
         return ps.findAll();
