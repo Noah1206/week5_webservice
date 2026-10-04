@@ -41,4 +41,9 @@ public class ProductController {
     public ProductResponse update(@PathVariable long id, @RequestBody ProductRequest request) {
         return ps.update(id, request);
     }
+
+    @GetMapping("/{id}")
+    public void delete(@PathVariable long id) {
+        ps.delete(id);
+    }
 }
