@@ -42,7 +42,7 @@ public class ProductController {
         return ps.update(id, request);
     }
 
-    @GetMapping("/{id}")
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable long id) {
         ps.delete(id);
     }

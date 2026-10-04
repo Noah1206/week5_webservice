@@ -36,6 +36,7 @@ public class ProductService {
     }
 
     public ProductResponse update(long id, ProductRequest request) {
+        findProduct(id);
         return toResponse(pr.update(id, new Product(null, request.name(), request.description(), request.category(), request.date(), request.price())));
     }
 
